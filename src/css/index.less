@@ -1,0 +1,51 @@
+@import './variable.less';
+@import './mixin.less';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,body {
+  width: 100;
+  height: 100%;
+  overflow: hidden;
+}
+
+#gameBox {
+  width: @wrap_width;
+  height: @wrap_height;
+  .center-abs();
+
+  header {
+    width: @menu_width;
+    height: @menu_height;
+    float: left;
+    background-color: crimson;
+  }
+
+  main {
+    position: relative;
+    width: @stage_width;
+    height: @stage_height;
+    float: left;
+    background-color: @stage_bgcolor;
+    border: @line_short_side solid @side_color;
+
+    #net {
+      div {
+        background-color: @side_color;
+        position: absolute;
+      }
+      .set-line()
+    }
+    .ok {
+      width: @cell_width;
+      height: @cell_height;
+      background-color: #bfa;
+    }
+    #stage {
+      position: absolute;
+    }
+  }
+}

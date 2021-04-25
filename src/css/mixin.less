@@ -1,0 +1,25 @@
+@import './variable.less';
+
+.center-abs() {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.set-line() {
+  .set(@ok, @i) when (@i < 7) {
+    .line-@{i} {
+      @offset-left: @ok + @cell_width*@i + @line_short_side*(@i - 1);
+      @offset-top: @ok + @cell_width*(@i - 3) + @line_short_side*(@i - 3 - 1);
+      left: if(@i < 4, @offset-left, 0);
+      top: if(@i < 4, 0, @offset-top);
+      width: if(@i < 4, @line_short_side, @line_long_side);
+      height: if(@i < 4, @line_long_side, @line_short_side);
+    }
+    .set(@ok,@i + 1)
+  }
+  .set(0px, 1)
+}
