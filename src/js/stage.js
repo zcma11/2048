@@ -8,6 +8,7 @@ export default function initStage () {
   ctx.textAlign = 'center',
   // 垂直居中
   ctx.textBaseline = 'middle'
+  ctx.lineWidth = 0.5
   // ctx.fillText('1', 60, 60)
   window.ctx = ctx
 }
