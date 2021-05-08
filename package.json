@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "dependencies": {
+  "devDependencies": {
     "css-loader": "^5.2.4",
     "html-webpack-plugin": "4.5.1",
     "less": "^4.1.1",

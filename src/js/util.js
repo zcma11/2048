@@ -1,24 +1,28 @@
-export function arrWarn(message, sth) {
-  if (Array.isArray(sth)) {
-    if (arr.length === 0) {
-      throw Error(message)
-    }
+export function reverse(arr) {
+  if (arr.length <= 1) return
+
+  const len = arr.length - 1
+  const middle = -~len / 2
+
+  for (let i = 0; i < middle; i++) {
+    ;[arr[i], arr[len - i]] = [arr[len - i], arr[i]]
   }
 }
 
-export function random(limit) {
-  return Math.floor(Math.random() * limit) // 0 - limit-1
-}
+export function debounce(cb, limit) {
+  let last = Date.now()
+  let timer
+  return () => {
+    const now = Date.now()
 
-export function throttle(cb, limit) {
-  let start = Date.now()
-
-  return function (e) {
-    const end = Date.now()
-    console.log(end - start)
-    if (end - start > limit) {
-      cb(e)
-      start = end
+    if (now - last < limit) {
+      clearTimeout(timer)
     }
+
+    timer = setTimeout(() => {
+      cb()
+    }, limit)
+
+    last = now
   }
 }
