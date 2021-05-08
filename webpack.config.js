@@ -1,6 +1,6 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin")
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-const { resolve } = require("path")
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const { resolve } = require('path')
 
 module.exports = {
   entry: './src/index.js',
@@ -28,6 +28,7 @@ module.exports = {
     port: 8080,
     compress: false
   },
+  
   mode: 'development',
   devtool: 'eval-source-map'
 }
